@@ -1,7 +1,7 @@
 function countingValleys(steps: number, path: string): number {
     // Write your code here
-    let level = 0
-    let valleys = 0
+    let level: number = 0
+    let valleys: number = 0
     for (let character of path) {
         if (character === "U") {
             ++level
@@ -15,15 +15,15 @@ function countingValleys(steps: number, path: string): number {
     return valleys
 }
 
-let examples = [
+let examples: { steps: number, path: string, correct: number }[] = [
     { steps: 8, path: "DDUUUUDD", correct: 1 },
     { steps: 8, path: "UDDDUDUU", correct: 1 }
 ]
-let score = 0
+let score: number = 0
 let results: string[] = []
 for (let index in examples) {
-    let output = countingValleys(examples[index].steps, examples[index].path)
-    let comparison
+    let output: number = countingValleys(examples[index].steps, examples[index].path)
+    let comparison: string
     if (output == examples[index].correct) {
         comparison = "pass"
         ++score
